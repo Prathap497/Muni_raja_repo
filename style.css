@@ -313,7 +313,7 @@ nav .nav-list a:hover {
   direction: rtl;
 }
 
-.product-card.reversed > * {
+.product-card.reversed>* {
   direction: ltr;
 }
 
@@ -499,12 +499,12 @@ nav .nav-list a:hover {
   font-size: 1.1rem;
   text-decoration: none;
   transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .social-links a:hover {
   transform: translateY(-2px);
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   color: #fff;
 }
 
@@ -620,6 +620,7 @@ body.dark-theme .pill.active {
 }
 
 @media (max-width: 600px) {
+
   .hero-cta,
   .cta-wrap,
   .store-grid {
@@ -636,5 +637,228 @@ body.dark-theme .pill.active {
     position: static;
     margin-top: 0.75rem;
     display: inline-block;
+  }
+}
+
+/* --- Product Detail Page (PDP) Styles --- */
+
+.pdp-page {
+  padding-bottom: 4rem;
+}
+
+.breadcrumb {
+  margin: 1.5rem 0 2rem;
+  font-size: 0.9rem;
+  color: var(--muted-color);
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: var(--primary-color);
+}
+
+/* PDP Hero */
+.pdp-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.pdp-image-wrapper {
+  position: relative;
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0 30px 60px rgba(17, 3, 34, 0.08);
+  /* Soft shadow */
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pdp-image-wrapper img {
+  max-height: 550px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+/* PDP Carousel */
+.pdp-carousel {
+  width: 100%;
+  height: 550px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pdp-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 550px;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.pdp-slide.active {
+  opacity: 1;
+  position: relative;
+  /* Ensure it takes up flow space if needed, or stick to absolute stacking */
+  position: absolute;
+  /* Keep absolute to stack on top of each other */
+}
+
+/* Ensure at least one slide takes up space if we used relative, 
+   but since we fixed height on container, absolute is fine. 
+*/
+
+.pdp-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background: var(--text-color);
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pdp-content h1 {
+  font-size: clamp(2.5rem, 3vw, 3.5rem);
+  line-height: 1.1;
+  margin: 0.5rem 0;
+  color: var(--primary-color);
+}
+
+.pdp-tagline {
+  font-size: 1.25rem;
+  color: var(--muted-color);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.pdp-benefits-card {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(17, 3, 34, 0.03);
+}
+
+.pdp-benefits-card h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 1rem;
+  color: var(--text-color);
+}
+
+.pdp-benefits-card ul {
+  padding-left: 1.25rem;
+  margin: 0;
+  color: var(--muted-color);
+}
+
+.pdp-benefits-card li {
+  margin-bottom: 0.5rem;
+}
+
+.pdp-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* PDP Scientific / Usage Sections */
+.pdp-section-wrapper {
+  margin-bottom: 2rem;
+}
+
+.pdp-info-box {
+  border-radius: 30px;
+  padding: 4rem;
+}
+
+.pdp-info-box.light {
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 40px rgba(44, 13, 79, 0.03);
+  /* Extremely subtle tint */
+}
+
+.pdp-info-box.dark {
+  background: #1a0b2e;
+  /* Dark purple */
+  color: #fff;
+}
+
+.pdp-info-box h2 {
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.pdp-info-box.dark h2 {
+  color: #fff;
+}
+
+.pdp-info-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 900px;
+}
+
+.pdp-info-content ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.pdp-info-content li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.pdp-info-content li::before {
+  content: "•";
+  color: var(--accent-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  top: 0.2rem;
+}
+
+@media (max-width: 900px) {
+  .pdp-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .pdp-image-wrapper {
+    padding: 3rem 1rem;
+  }
+
+  .pdp-info-box {
+    padding: 2.5rem 1.5rem;
   }
 }
