@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn about MEGAMONT-L from Astra Biocare, including key benefits, usage guidance, pack information, and online purchase options." />
   <title>MEGAMONT-L - Astra Biocare Pvt Ltd</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,13 +20,14 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="container header-container">
       <a href="../index.html" class="logo">
         <img src="../img/company_logo.png" alt="Astra Biocare Logo" />
         <h1>Astra Biocare</h1>
       </a>
-      <nav>
+      <nav aria-label="Primary navigation">
         <ul class="nav-list">
           <li><a href="../index.html">Home</a></li>
           <li><a href="products.html">Products</a></li>
@@ -33,10 +35,10 @@
           <li><a href="../contact.html">Contact</a></li>
         </ul>
       </nav>
-      <button id="themeBtn" aria-label="Toggle dark mode" title="Toggle dark mode">🌓</button>
+      <button id="themeBtn" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i></button>
     </div>
   </header>
-  <main class="pdp-page">
+  <main id="main-content" class="pdp-page">
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="products.html"><i class="fa-solid fa-arrow-left-long"></i> Back to Products</a>
@@ -44,8 +46,8 @@
       <section class="pdp-hero" data-aos="fade-up">
         <div class="pdp-image-wrapper">
           <div class="pdp-carousel">
-            <img src="../img/megamont-l.jpeg" class="pdp-slide active" alt="MEGAMONT-L Tablets - View 1" />
-            <img src="../img/megamont-l.jpeg" class="pdp-slide" alt="MEGAMONT-L Tablets - View 2" />
+            <img src="../img/hero_medicines.jpg" class="pdp-slide active" alt="MEGAMONT-L Tablets - View 1" />
+            <img src="../img/hero_medicines.jpg" class="pdp-slide" alt="MEGAMONT-L Tablets - View 2" />
           </div>
           <span class="pdp-badge">Pack: 1 x 10 Tablets</span>
         </div>
@@ -96,21 +98,21 @@
   <footer class="site-footer" data-aos="fade-up">
     <div class="container footer-grid">
       <div>
-        <img src="../img/company_logo.png" alt="Astra Biocare Logo" class="footer-logo" />
-        <p>&copy; 2025 Astra Biocare Pvt Ltd. All rights reserved.</p>
+        <img loading="lazy" decoding="async" src="../img/company_logo.png" alt="Astra Biocare Logo" class="footer-logo" />
+        <p>&copy; 2026 Astra Biocare Pvt Ltd. All rights reserved.</p>
         <address>Registered Office: #16, 2nd cross, Aruna Building, Somasundrapalya, Bangalore, Karnataka - 560102.
         </address>
       </div>
       <div>
         <p class="eyebrow">Follow us</p>
         <ul class="social-links">
-          <li><a href="https://www.facebook.com/astrabiocare/" target="_blank" rel="noopener" aria-label="Facebook"><img
+          <li><a href="https://www.facebook.com/astrabiocare/" target="_blank" rel="noopener" aria-label="Facebook"><img loading="lazy" decoding="async"
                 src="../img/facebook.png" alt="Facebook" class="social-icon" /></a></li>
-          <li><a href="#" target="_blank" rel="noopener" aria-label="X (Twitter)"><img src="../img/twitter.png"
+          <li><a href="#" target="_blank" rel="noopener" aria-label="X (Twitter)"><img loading="lazy" decoding="async" src="../img/twitter.png"
                 alt="X (Twitter)" class="social-icon" /></a></li>
-          <li><a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="../img/linkedin.png"
+          <li><a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><img loading="lazy" decoding="async" src="../img/linkedin.png"
                 alt="LinkedIn" class="social-icon" /></a></li>
-          <li><a href="#" target="_blank" rel="noopener" aria-label="YouTube"><img src="../img/youtube.png"
+          <li><a href="#" target="_blank" rel="noopener" aria-label="YouTube"><img loading="lazy" decoding="async" src="../img/youtube.png"
                 alt="YouTube" class="social-icon" /></a></li>
         </ul>
       </div>
@@ -125,20 +127,6 @@
       </div>
     </div>
   </footer>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      if (window.AOS) AOS.init();
-      const slides = document.querySelectorAll('.pdp-slide');
-      let currentSlide = 0;
-      if (slides.length > 1) {
-        setInterval(() => {
-          slides[currentSlide].classList.remove('active');
-          currentSlide = (currentSlide + 1) % slides.length;
-          slides[currentSlide].classList.add('active');
-        }, 3000);
-      }
-    });
-  </script>
-</body>
+  </body>
 
 </html>

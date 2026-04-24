@@ -23,13 +23,14 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="container header-container">
       <a href="index.html" class="logo">
         <img src="img/company_logo.png" alt="Astra Biocare Logo" />
         <h1>Astra Biocare</h1>
       </a>
-      <nav>
+      <nav aria-label="Primary navigation">
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="products/products.html">Products</a></li>
@@ -37,11 +38,11 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <button id="themeBtn" aria-label="Toggle dark mode" title="Toggle dark mode">🌓</button>
+      <button id="themeBtn" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i></button>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero hero-text-only" data-aos="fade-up">
       <div class="container">
         <div class="section-heading">
@@ -97,7 +98,7 @@
               <h3><i class="fa-solid fa-eye"></i> Complete Transparency</h3>
             </div>
             <p>
-              We disclose full ingredient profiles, dosage forms, and pack sizes for every SKU. No hidden components, no marketing fluff—just honest, detailed composition data.
+              We disclose full ingredient profiles, dosage forms, and pack sizes for every SKU. No hidden components, no marketing fluff-just honest, detailed composition data.
             </p>
           </article>
           <article>
@@ -189,8 +190,8 @@
   <footer class="site-footer" data-aos="fade-up">
     <div class="container footer-grid">
       <div>
-        <img src="img/company_logo.png" alt="Astra Biocare Logo" class="footer-logo" />
-        <p>&copy; 2025 Astra Biocare Pvt Ltd. All rights reserved.</p>
+        <img src="img/company_logo.png" alt="Astra Biocare Logo" class="footer-logo" loading="lazy" decoding="async" />
+        <p>&copy; 2026 Astra Biocare Pvt Ltd. All rights reserved.</p>
         <address>
           Registered Office: #16, 2nd cross, Aruna Building, Somasundrapalya, Bangalore, Karnataka - 560102.
         </address>
@@ -198,10 +199,10 @@
       <div>
         <p class="eyebrow">Follow us</p>
         <ul class="social-links">
-          <li><a href="https://www.facebook.com/astrabiocare/" target="_blank" rel="noopener" aria-label="Facebook"><img src="img/facebook.png" alt="Facebook" class="social-icon"/></a></li>
-          <li><a href="#" target="_blank" rel="noopener" aria-label="X (Twitter)"><img src="img/twitter.png" alt="X (Twitter)" class="social-icon"/></a></li>
-          <li><a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="img/linkedin.png" alt="LinkedIn" class="social-icon"/></a></li>
-          <li><a href="#" target="_blank" rel="noopener" aria-label="YouTube"><img src="img/youtube.png" alt="YouTube" class="social-icon"/></a></li>
+          <li><a href="https://www.facebook.com/astrabiocare/" target="_blank" rel="noopener" aria-label="Facebook"><img loading="lazy" decoding="async" src="img/facebook.png" alt="Facebook" class="social-icon"/></a></li>
+          <li><a href="#" target="_blank" rel="noopener" aria-label="X (Twitter)"><img loading="lazy" decoding="async" src="img/twitter.png" alt="X (Twitter)" class="social-icon"/></a></li>
+          <li><a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><img loading="lazy" decoding="async" src="img/linkedin.png" alt="LinkedIn" class="social-icon"/></a></li>
+          <li><a href="#" target="_blank" rel="noopener" aria-label="YouTube"><img loading="lazy" decoding="async" src="img/youtube.png" alt="YouTube" class="social-icon"/></a></li>
         </ul>
       </div>
       <div>
@@ -219,12 +220,5 @@
       </div>
     </div>
   </footer>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      if (window.AOS) {
-        AOS.init();
-      }
-    });
-  </script>
 </body>
 </html>
