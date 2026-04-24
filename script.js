@@ -14,8 +14,11 @@ function initThemeToggle() {
     const darkModeOn = BODY.classList.contains("dark-theme");
     themeBtn.setAttribute("aria-pressed", darkModeOn ? "true" : "false");
     themeBtn.setAttribute("aria-label", darkModeOn ? "Switch to light mode" : "Switch to dark mode");
+    themeBtn.setAttribute("title", darkModeOn ? "Switch to light mode" : "Switch to dark mode");
+    themeBtn.dataset.theme = darkModeOn ? "dark" : "light";
   };
 
+  themeBtn.textContent = "";
   updateThemeButtonLabel();
 
   themeBtn.addEventListener("click", () => {
@@ -243,6 +246,41 @@ function initProductCarousel() {
   });
 }
 
+function initFooterLogoLink() {
+  const footerLogo = document.querySelector(".site-footer .footer-logo");
+  if (!footerLogo || footerLogo.closest("a")) return;
+
+  const homeHref = window.location.pathname.includes("/products/") ? "../index.html" : "index.html";
+  const logoLink = document.createElement("a");
+  logoLink.href = homeHref;
+  logoLink.className = "footer-logo-link";
+  logoLink.setAttribute("aria-label", "Go to Astra Biocare home page");
+
+  footerLogo.parentNode?.insertBefore(logoLink, footerLogo);
+  logoLink.appendChild(footerLogo);
+}
+
+function initScrollToTopButton() {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "scroll-top-btn";
+  button.setAttribute("aria-label", "Scroll back to top");
+  button.setAttribute("title", "Back to top");
+  button.innerHTML = '<span aria-hidden="true">↑</span>';
+
+  const toggleVisibility = () => {
+    button.classList.toggle("is-visible", window.scrollY > 500);
+  };
+
+  button.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  document.body.appendChild(button);
+  toggleVisibility();
+  window.addEventListener("scroll", toggleVisibility, { passive: true });
+}
+
 function initAOSIfAvailable() {
   if (window.AOS) {
     window.AOS.init({ duration: 700, once: true, easing: "ease-out-cubic" });
@@ -258,5 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
   initContactFormState();
   initProductCarousel();
+  initFooterLogoLink();
+  initScrollToTopButton();
   initAOSIfAvailable();
 });
